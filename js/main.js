@@ -100,6 +100,7 @@ void main( void ) {
     let canvas;
     let inputWidth, inputHeight;
     let inputFps, inputStart, inputDuration;
+    let spanExporting;
     let selectFormat;
     let gl;
     let requestId = null;
@@ -124,6 +125,9 @@ void main( void ) {
         inputStart = document.getElementById('input-start');
         inputDuration = document.getElementById('input-duration');
         selectFormat = document.getElementById('select-format');
+        spanExporting = document.getElementById('span-exporting');
+
+        spanExporting.style.visibility = "hidden";
 
         canvas = document.getElementById('canvas');
         gl = canvas.getContext('webgl');
@@ -138,6 +142,7 @@ void main( void ) {
         if (requestId != null) {
             cancelAnimationFrame(requestId);
         }
+        spanExporting.style.visibility = "visible";
 
         const fragmentShader = createShader(gl, getFragmentSource(), gl.FRAGMENT_SHADER);
         const program = createProgram(gl, vertexShader, fragmentShader);
@@ -176,6 +181,7 @@ void main( void ) {
                 cancelAnimationFrame(requestId);
                 capturer.stop();
                 capturer.save();
+                spanExporting.style.visibility = "hidden";
                 reset();
             }
         }
