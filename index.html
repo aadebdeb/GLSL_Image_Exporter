@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lnag="en">
+    <head>
+        <title>GLSL Image Exporter</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>GLSL Image Exporter</h1>
+        <canvas id="canvas"></canvas>
+        <p>width: <input type="number" value="640" id="input-width"></p>
+        <p>height: <input type="number" value="480" id="input-height"></p>
+        <p><input type="button" value="resize" id="button-resize"></p>
+        <p>FPS: <input type="text" value="30" id="input-fps"></p>
+        <p>Start: <input type="number" value="0" id="input-start"> s</p>
+        <p>Duration: <input type="number" value="4" id="input-duration"> s</p>
+        <P>Format: <select id="select-format">
+            <option value="gif">animation gif</option>
+            <option value="jpg">jpg</option>
+            <option value="png">png</option>
+            <option value="webm">webm</option>
+        </select></P>
+        <p><input type="button" value="export" id="button-export"></p>
+        <textarea rows="50" cols="100" id="textarea-glsl"></textarea>
+        <p><input type="button" value="update" id="button-update"></p>
+        <script src="./js/CCapture.all.min.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html
